@@ -3,37 +3,36 @@
 #include <string.h>
 
 int main() {
-  int n, k, m, cost['~'], totalCost = 0;
+  int n, k, m;
+  int totalCost;
   int i, j, l;
-  char s[10000];
+  char c;
+  int cost['~' - ' '];
+  char *line;
+  size_t bufsize = 10000;
+  line = (char *)malloc(bufsize * sizeof(char));
 
-  for(i = ' ';i <= '~';i++) {
+  for(i = 0;i < '~';i++)
     cost[i] = 0;
-  }
 
   scanf("%d", &n);
-  for(i = 0;i < n;i++) {
-    scanf("%d", &k);
+  for(i = 0;i < n;i++){
+    totalCost = 0;
+    scanf("%d%*c", &k);
     for(j = 0;j < k;j++) {
-      scanf("%s", s);
-      scanf("%d", &cost[s[0]]);
+      scanf("%c%*[^0-9]", &c);
+      scanf("%d%*c", &cost[c - 1]);
     }
 
-    scanf("%s", s);
-    printf("%s\n", s); // 表示される
-
-    scanf("%d", &m);
+    scanf("%d%*c", &m);
     for(j = 0;j < m;j++) {
-      printf("%s\n", s); // 表示される
-      scanf("%s", s);
-      printf("%s", s); // abort
-      for(l = 0;s[l] != '\0';l++) {
-        totalCost += cost[s[l]];
+      getline(&line, &bufsize, stdin);
+      printf("%s\n", line);
+      for(l = 0;line[l] != '\n';l++) {
+        totalCost += cost[line[l] - 1];
       }
     }
 
-    printf("%d.%02d$", totalCost / 100, totalCost - (totalCost / 100));
+    printf("%d.%02d$\n", totalCost / 100, totalCost - (totalCost / 100 * 100));
   }
-
-  return 0;
 }
