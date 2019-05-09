@@ -8,7 +8,6 @@ int kill(int head, int min_knight, vector<int> knights) {
   int size = knights.size();
 
   for(int i = min_knight;i < knights.size();i++) {
-    // printf("head: %d, knights[%d]: %d\n", head, i, knights[i]); // debug
     if(head <= knights[i])
       return i;
   }
@@ -45,19 +44,16 @@ int main() {
     sort(knights.begin(), knights.end());
 
     min_knight_can_beat = distance(knights.begin(), upper_bound(knights.begin(), knights.end(), heads[0] - 1));
-    // cout << "min_knight_can_beat: " << min_knight_can_beat << ", heads[0] - 1: " << heads[0] - 1 << endl; // debug
     if(knights.size() - min_knight_can_beat < heads.size() || max_head > max_knight) {
       cout << "Loowater is doomed!" << endl;
       continue;
     }
 
     for(int i = 0;i < heads.size();i++) {
-      // cout << endl << heads[i] << endl; // debug
       result = kill(heads[i], min_knight_can_beat, knights);
       if(result != -1) {
         coin += knights[result];
         min_knight_can_beat = result + 1;
-        // cout << "killed cost: " << knights[result] << endl; // debug
       } else {
         cout << "Loowater is doomed!" << endl;
         break;
