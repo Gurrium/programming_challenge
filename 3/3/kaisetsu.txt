@@ -1,0 +1,13 @@
+Name: 金子 平
+Student Number: 201913459
+### 11292 - Dragon of Loowater
+滅亡の条件を洗い出すのがめんどくさかったがそれ以外はシンプルだった
+
+### 11565 - Simple Equations
+x, y, zのループの順序を間違えた
+
+### 11935 - Through the Desert
+どのイベントでどの値を変更すべきかがめんどくさかった
+
+### 12455 - Bars
+特定のBarを使わない組み合わせを見落としていた
