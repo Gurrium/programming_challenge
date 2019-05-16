@@ -9,14 +9,11 @@ using namespace std;
 
 int main() {
   int t, price, n, coin;
-  int current_count, min_count;
-  int min_over = -1;
   vector<int> coins;
 
   cin >> t;
   for(int i = 0;i < t;i++) {
     coins.clear();
-    min_over = 10000;
 
     cin >> price >> n;
     for(int j = 0;j < n;j++) {
