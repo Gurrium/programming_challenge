@@ -26,7 +26,7 @@ int main() {
     amount[0] = 0;
 
     for(int k = 0;k < coins.size();k++) {
-      for(int l = 10000;l > k;l--) {
+      for(int l = 10000;l > 0;l--) {
         if(amount[l] != -1) {
           if(amount[l + coins[k]] != -1) {
             amount[l + coins[k]] = min(amount[l] + 1, amount[l + coins[k]]);

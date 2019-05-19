@@ -1,0 +1,17 @@
+## 5/16
+Name: 金子 平
+Student Number: 201913459
+#### 507 - Jill Rides Again
+スタート地点の保存とsumが一緒だったときの処理がめんどくさかった
+
+#### 10819 - Trouble of 13-Dots
+if(j + items[i][0] > m + 200) continue;
+を
+if(j + items[i][0] >= m + 200) continue;
+としていたためエラーがでたが，出る頻度が低く特定するのに時間がかかった．
+
+#### 11450 - Wedding shopping
+授業のスライドを見てやった
+
+#### 11517 - Exact Change
+10819と同じだが，最小を求める問題なので初期値かどうかの分岐を追加した

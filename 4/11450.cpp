@@ -6,7 +6,7 @@ using namespace std;
 
 int n, m, c;
 vector<int> ks;
-vector< vector<int> > all_costs;
+vector<vector<int> > all_costs;
 vector<vector<int> > results(201, vector<int>(20, -1));
 
 int shop(int budget, int g) {
