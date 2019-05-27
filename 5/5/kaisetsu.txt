@@ -1,0 +1,14 @@
+## 5/23
+Name: 金子 平
+Student Number: 201913459
+#### 10765 - Doves and bombs
+pigeon valueを求めるのに苦労した
+
+#### 11838 - Come and Go
+単純なアルゴリズムで実装したら通った XD
+
+#### 11902 - Dominator
+授業中のアルゴリズムを実装した
+
+#### 12442 - Forwarding Emails
+ループの対処に苦戦した
