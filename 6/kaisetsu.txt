@@ -1,0 +1,11 @@
+558 - Wormholes
+BFで簡単だった
+
+1056 - Degrees of Separation
+WFで簡単だった
+
+10171 - Meeting Prof. Miguel...
+energyが同時の場合の処理がちょっとめんどくさかった
+
+10354 - Avoiding Your Boss
+最初BFで解いていたが，解けなかったのでWFにした
