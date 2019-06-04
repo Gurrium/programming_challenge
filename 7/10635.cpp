@@ -24,6 +24,7 @@ int ld(vector<int> lhs, vector<int> rhs) {
     }
   }
 
+  // return 0; runtime error
   return results[lhs_length - 1][rhs_length - 1];
 }
 
