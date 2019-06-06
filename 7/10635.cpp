@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -44,25 +45,31 @@ int ld(vector<int> lhs, vector<int> rhs) {
 int main() {
   int t, n, p, q;
   int key, counter = 0;
-  vector<int> prince, princess;
+  vector<int> prince_v, princess_v;
+  int *prince;
 
   cin >> t;
   for(int i = 0;i < t;i++) {
-    prince.clear();
-    princess.clear();
+    prince_v.clear();
+    princess_v.clear();
 
     cin >> n >> p >> q;
+    prince = (int *)malloc(sizeof(int) * n * n + 1);
+
     for(int j = 0;j < p + 1;j++) {
       cin >> key;
-      prince.push_back(key);
+      prince[key] = 1;
+      prince_v.push_back(key);
     }
 
     for(int j = 0;j < q + 1;j++) {
       cin >> key;
-      princess.push_back(key);
+      if(prince[key] == 1) {
+        princess_v.push_back(key);
+      }
     }
 
-    int result = ld(prince, princess);
+    int result = ld(prince_v, princess_v);
     cout << "Case " << ++counter << ": " << result << endl;
   }
 
