@@ -6,9 +6,9 @@ using namespace std;
 int ld(vector<int> lhs, vector<int> rhs) {
   int lhs_length = lhs.size() + 1;
   int rhs_length = rhs.size() + 1;
-  int results[lhs_length][rhs_length];
+  int results[2][rhs_length];
 
-  for(int i = 0;i < lhs_length;i++) {
+  for(int i = 0;i < 2;i++) {
     results[i][0] = 0;
   }
   for(int j = 0;j < rhs_length;j++) {
@@ -16,16 +16,29 @@ int ld(vector<int> lhs, vector<int> rhs) {
   }
 
   int cost = 0;
+  bool toggle = true;
   for(int i = 1;i < lhs_length;i++) {
-    for(int j = 1;j < rhs_length;j++) {
-      cost = lhs[i - 1] == rhs[j - 1] ? 1 : 0;
-      results[i][j] = max(results[i - 1][j - 1] + cost,
-                          max(results[i - 1][j], results[i][j - 1]));
+    if(toggle) {
+      for(int j = 1;j < rhs_length;j++) {
+        cost = lhs[i - 1] == rhs[j - 1] ? 1 : 0;
+        results[1][j] = max(results[0][j - 1] + cost,
+                            max(results[0][j], results[1][j - 1]));
+      }
+    } else {
+      for(int j = 1;j < rhs_length;j++) {
+        cost = lhs[i - 1] == rhs[j - 1] ? 1 : 0;
+        results[0][j] = max(results[1][j - 1] + cost,
+                            max(results[1][j], results[0][j - 1]));
+      }
     }
+    toggle = !toggle;
   }
 
-  // return 0; WA
-  return results[lhs_length - 1][rhs_length - 1];
+  if(toggle) {
+    return results[0][rhs_length - 1];
+  } else {
+    return results[1][rhs_length - 1];
+  }
 }
 
 int main() {
