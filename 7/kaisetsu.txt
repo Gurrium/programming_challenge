@@ -1,0 +1,15 @@
+554 - Caesar Cypher
+改行の処理がめんどくさかったが，ほかは簡単だった
+
+644 - Immediate Decodability
+高専で習った方法(bin treeを作る)で解いた
+
+10298 - Power Strings
+素直な解法で解けた
+
+10635 - Prince and Princess
+not solved
+供養
+
+11357 - Ensuring Truth
+regexを使ったのは卑怯かとも思うが，解けるならどんな方法でもいいかなと
