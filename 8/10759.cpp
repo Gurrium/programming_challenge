@@ -21,33 +21,26 @@ unsigned long long int pow(unsigned long long int base, unsigned long long int e
 unsigned long long int count(int dice_left, int score_left) {
   if(score_left <= 0){
     if(dice_left == 0) {
-      printf("return %d\n", 1); // debug
       return 1;
     } else {
-      printf("return %llu\n", pow(6, dice_left)); // debug
       return pow(6, dice_left);
     }
   }
   if(score_left <= dice_left) {
-    printf("return %llu\n", pow(6, dice_left)); // debug
     return pow(6, dice_left);
   }
   if(dice_left == 0) {
-    printf("return %d\n",  0); // debug
     return 0;
   }
   if(results[dice_left][score_left] != -1) {
-    printf("return %llu\n",  results[dice_left][score_left]); // debug
     return results[dice_left][score_left];
   }
 
   unsigned long long sum = 0;
   for(int i = 0;i < 6;i++) {
-    printf("calling dice_left: %d, score_left: %d\n", dice_left - 1, score_left - (i + 1)); // debug
     sum += count(dice_left - 1, score_left - (i + 1));
   }
 
-  printf("return %llu\n",  sum); // debug
   return results[dice_left][score_left] = sum;
 }
 
@@ -67,17 +60,11 @@ int main() {
       cin >> n >> x;
       continue;
     }
-    printf("n: %d, x: %d\n", n, x); // debug
     result = count(n, x);
-    cout << "result: " << result << endl; // debug
     poww = pow(6, n);
-    cout << "poww: " << poww << endl; // debug
     gcdd = gcd(poww, result);
-    cout << "gcdd: " << gcdd << endl; // debug
     denominator = poww / gcdd;
-    cout << "denominator: " << denominator << endl; // debug
     numerator = result / gcdd;
-    cout << "numerator: " << numerator << endl; // debug
 
     if(numerator == 1 && denominator == 1) {
       cout << 1 << endl;
