@@ -1,0 +1,12 @@
+10168 - Summation of Four Primes
+素数判定用の配列を分割するのがめんどくさかった
+
+10303 - How Many Trees?
+Javaを書いたことがなかったので慣れるまで大変だったが，アルゴリズム自体は簡単だった
+
+10759 - Dice Throwing
+score_leftとdice_leftによる早期returnで返す値がちょっとめんどくさかった
+
+11401 - Triangle Counting
+計算式を出すのがめんどくさかった
+inputをunsigned long long intにしなければいけないのになかなか気づけなかった
